@@ -1,6 +1,10 @@
 package com.nika.musicbox.modelos;
 
 public class Musicas extends Audio {
+    private String album;
+    private String artista;
+    private String genero;
+
     public String getAlbum() {
         return album;
     }
@@ -25,7 +29,12 @@ public class Musicas extends Audio {
         this.genero = genero;
     }
 
-    private String album;
-    private String artista;
-    private String genero;
+    @Override
+    public int getClassificacao() {
+        if(this.getTotalDeReproducoes() > 1000){
+            return 10;
+        } else {
+            return 5;
+        }
+    }
 }

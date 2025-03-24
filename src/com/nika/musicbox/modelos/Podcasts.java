@@ -19,6 +19,15 @@ public class Podcasts extends Audio{
     public void setHost(String host) {
         this.host = host;
     }
+
+    @Override
+    public int getClassificacao() {
+        if(this.getCurtidas() > 500){
+            return 10;
+        } else {
+            return 5;
+        }
+    }
 }
 
 
